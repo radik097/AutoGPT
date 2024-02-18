@@ -130,7 +130,6 @@ d88P     888  "Y88888  "Y888 "Y88P"   "Y8888P88 888           888
                 response = requests.get("https://api.github.com/user", headers=headers)
                 if response.status_code == 200:
                     scopes = response.headers.get("X-OAuth-Scopes")
-                    logging.info(scopes)
                     print(scopes)
                     if "public_repo" in scopes or "repo" in scopes:
                         click.echo(
