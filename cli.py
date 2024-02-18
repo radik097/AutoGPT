@@ -13,7 +13,9 @@ except ImportError:
     os.system("pip3 install click")
     os.system("pip3 install PyGithub")
     import click
+import logging
 
+logging = logging.basicConfig(encoding='utf-8', level='INFO')
 
 @click.group()
 def cli():
@@ -128,6 +130,8 @@ d88P     888  "Y88888  "Y888 "Y88P"   "Y8888P88 888           888
                 response = requests.get("https://api.github.com/user", headers=headers)
                 if response.status_code == 200:
                     scopes = response.headers.get("X-OAuth-Scopes")
+                    logging.info(scopes)
+                    print(scopes)
                     if "public_repo" in scopes or "repo" in scopes:
                         click.echo(
                             click.style(
