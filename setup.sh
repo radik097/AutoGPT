@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo "Start setup autoGPT"
 if [[ "$OSTYPE" == "cygwin" ]] || [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "win32" ]]; then
     echo "This script cannot be run on Windows."
     echo "Please follow the installation instructions at https://docs.python.org/3/using/windows.html"
